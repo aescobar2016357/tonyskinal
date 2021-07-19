@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteEmpresas" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="efec6cb0-c7c3-4c1f-a564-b75bb5110c06">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[call sp_ListarPlatos]]>
+	</queryString>
+	<field name="codigoPlato" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombrePlato" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcionPlato" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="precioPlato" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoTipoPlato" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="nombreEmpresa_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{nombreEmpresa}]]></variableExpression>
+	</variable>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="572" height="752" uuid="03abdcba-92d4-4b26-8107-50186e761b28"/>
+				<imageExpression><![CDATA["C:\\Users\\Axel\\Documents\\NetBeansProjects\\TonysKinalIN5BM2016357\\src\\org\\axelescobar\\img\\FondoReporte.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="141" splitType="Stretch">
+			<image>
+				<reportElement x="14" y="10" width="59" height="51" uuid="cd53c81d-ba7b-4a04-91f6-9f6ca9b63cb3"/>
+				<imageExpression><![CDATA["C:\\Users\\Axel\\Documents\\NetBeansProjects\\TonysKinalIN5BM2016357\\src\\org\\axelescobar\\img\\Icono.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="73" y="24" width="130" height="37" uuid="d544db23-25e0-4893-88ff-eea7e828213f"/>
+				<textElement>
+					<font fontName="SansSerif" size="20"/>
+				</textElement>
+				<text><![CDATA[Tony´s Kinal]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="572" height="35" uuid="54f17be5-0e6e-4489-8c82-2ba99465f075"/>
+				<textElement textAlignment="Center">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE PLATOS]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="54" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="572" height="49" forecolor="#0099FF" backcolor="#0099FF" uuid="f90486de-ef63-4955-b1fa-d29979fa55c7"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="19" width="100" height="20" uuid="d8b56b35-86d4-41b2-9de3-d5e5aea1a1f4"/>
+				<text><![CDATA[codigoPlato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="103" y="19" width="100" height="20" uuid="96626b22-fd21-4cee-92b3-52d487c60676"/>
+				<text><![CDATA[cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="214" y="19" width="100" height="20" uuid="c1f5c59c-2a3e-43c1-b23d-ffb276f04fd4"/>
+				<text><![CDATA[nombrePlato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="324" y="19" width="100" height="20" uuid="4430218d-7a9d-4d61-bcec-d8574528a6f3"/>
+				<text><![CDATA[descripcionPlato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="437" y="19" width="100" height="20" uuid="1b506ad3-d778-4201-a21e-68a744a55513"/>
+				<text><![CDATA[precioPlato]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="61" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="30" width="572" height="1" forecolor="#0099FF" backcolor="#0066FF" uuid="84ae4fca-ef72-41fa-9f75-ee46d89f76fe"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="10" width="100" height="20" uuid="95e7caf8-e822-4999-8cca-a425e361ffcb"/>
+				<textFieldExpression><![CDATA[$F{codigoPlato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="103" y="10" width="100" height="20" uuid="0af0db6a-042d-475b-821a-20647145cd40"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="214" y="10" width="100" height="20" uuid="da002a67-d563-46a6-b041-aa3696614b89"/>
+				<textFieldExpression><![CDATA[$F{nombrePlato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="324" y="10" width="100" height="20" uuid="a88e5bda-6626-4743-83a4-474102db9e38"/>
+				<textFieldExpression><![CDATA[$F{descripcionPlato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="437" y="11" width="100" height="20" uuid="da504efc-ba55-4de0-bb42-8be467314313"/>
+				<textFieldExpression><![CDATA[$F{precioPlato}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="98" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

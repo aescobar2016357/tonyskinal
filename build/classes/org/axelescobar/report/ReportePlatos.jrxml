@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReportePlatos" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="efec6cb0-c7c3-4c1f-a564-b75bb5110c06">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="46"/>
+	<queryString>
+		<![CDATA[call sp_ListarPlatos
+]]>
+	</queryString>
+	<field name="codigoPlato" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombrePlato" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcionPlato" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="precioPlato" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoTipoPlato" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="572" height="752" uuid="03abdcba-92d4-4b26-8107-50186e761b28"/>
+				<imageExpression><![CDATA["C:\\Users\\Axel\\Documents\\NetBeansProjects\\TonysKinalIN5BM2016357\\src\\org\\axelescobar\\img\\FondoReporte.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="141" splitType="Stretch">
+			<image>
+				<reportElement x="14" y="10" width="59" height="51" uuid="cd53c81d-ba7b-4a04-91f6-9f6ca9b63cb3"/>
+				<imageExpression><![CDATA["C:\\Users\\Axel\\Documents\\NetBeansProjects\\TonysKinalIN5BM2016357\\src\\org\\axelescobar\\img\\Icono.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="73" y="24" width="130" height="37" uuid="d544db23-25e0-4893-88ff-eea7e828213f"/>
+				<textElement>
+					<font fontName="SansSerif" size="20"/>
+				</textElement>
+				<text><![CDATA[Tony´s Kinal]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="572" height="35" uuid="54f17be5-0e6e-4489-8c82-2ba99465f075"/>
+				<textElement textAlignment="Center">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE PLATOS
+]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="54" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="572" height="49" forecolor="#0099FF" backcolor="#0099FF" uuid="f90486de-ef63-4955-b1fa-d29979fa55c7"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="12" width="83" height="20" uuid="384c6f71-ba5f-4227-be18-242b264b5088"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Plato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="83" y="12" width="70" height="20" uuid="c25c95c0-13dc-4cc6-8421-12687d84ff70"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="163" y="12" width="90" height="20" uuid="f5293e99-36f2-46e6-81e7-23631f70deb7"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre Plato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="263" y="12" width="103" height="20" uuid="ef8d9168-de64-4546-a43b-eeb01e85daa3"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción Plato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="378" y="12" width="74" height="20" uuid="9d2112ce-8540-447d-aad9-195b5db12641"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio Plato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="464" y="12" width="104" height="20" uuid="c3b64c65-afbc-4bf1-890b-7eef2043292d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[codigoTipoPlato]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="61" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="30" width="572" height="1" forecolor="#0099FF" backcolor="#0066FF" uuid="84ae4fca-ef72-41fa-9f75-ee46d89f76fe"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="5" width="73" height="20" uuid="4a96a61d-a9f6-489b-8930-eaadaec821a1"/>
+				<textFieldExpression><![CDATA[$F{codigoPlato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="83" y="5" width="70" height="20" uuid="17815d1f-503b-4bf8-a7c9-d114dfd5ae9e"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="163" y="5" width="90" height="20" uuid="f774a7ad-e71e-4779-83e6-5cc57ea685ad"/>
+				<textFieldExpression><![CDATA[$F{nombrePlato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="263" y="5" width="103" height="20" uuid="e4ef207f-c94f-494d-a360-e9f60007f263"/>
+				<textFieldExpression><![CDATA[$F{descripcionPlato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="5" width="100" height="20" uuid="455187a0-c7c4-4174-a460-fc2b8e60d050"/>
+				<textFieldExpression><![CDATA[$F{codigoTipoPlato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="5" width="76" height="20" uuid="75e78f23-3d66-4b18-9f9e-e8692f4499da"/>
+				<textFieldExpression><![CDATA[$F{precioPlato}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="98" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>
